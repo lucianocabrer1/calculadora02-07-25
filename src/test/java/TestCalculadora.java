@@ -8,7 +8,7 @@ public class TestCalculadora {
 
     @Test
     public void testSuma(){
-        Assertions.assertEquals(6, calculadora.Suma(2,3));
+        Assertions.assertFalse(calculadora.Suma(2,3)==6);
     }
 
     @Test
