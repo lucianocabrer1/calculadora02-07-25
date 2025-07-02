@@ -25,4 +25,9 @@ public class TestCalculadora {
     public void testResta(){
         Assertions.assertEquals(2,calculadora.Resta(5,3));
     }
+
+    @Test
+    public void testResta2(){
+        Assertions.assertEquals(2,calculadora.Resta(5,3));
+    }
 }
