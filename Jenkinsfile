@@ -7,6 +7,11 @@ pipeline{
     }
 
     stages {
+        stage('Step 0 - HOLA MUNDO') {
+                steps {
+                   echo 'HOLA MUNDO'
+                }
+            }
         stage('Step 1 - CheckOut Code') {
             steps {
                checkout([
@@ -19,11 +24,6 @@ pipeline{
                     ]],
                     extensions: [[$class: 'CleanBeforeCheckout']]
                 ])
-                // Run Maven on a Unix agent.
-             //   sh "mvn -Dmaven.test.failure.ignore=true clean package"
-
-                // To run Maven on a Windows agent, use
-                // bat "mvn -Dmaven.test.failure.ignore=true clean package"
             }
         }
         stage('Step 2 - Compile Code') {
@@ -36,5 +36,6 @@ pipeline{
                bat "mvn test"
             }
         }
+
     }
 }
